@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ZCreation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #D2B48C, #F4E1C1); /* Gradient background */
+            text-align: center;
+            color: #333;
+            position: relative; /* Required for the cursor circle */
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .btn-login {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #D2B48C;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-login:hover {
+            background-color: #C49A6C;
+            transform: scale(1.05);
+        }
+        .btn-login:active {
+            transform: scale(0.98);
+        }
+        .btn-login:focus {
+            outline: none;
+        }
+        .decorative-element {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background-color: #D2B48C;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.2;
+        }
+        .decorative-element::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: #F4E1C1;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Circle style for cursor tracking */
+        .cursor-circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #6f4f37; /* Same as the buttons */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decorative-element"></div>
+        <h1>Welcome to ZCreation!</h1>
+        <p>We're glad to have you here. Let's get started by logging in!</p>
+        <a href="{% url 'login' %}" class="btn-login">Login</a>
+    </div>
+
+    <!-- Cursor Circle -->
+    <div class="cursor-circle" id="cursor-circle"></div>
+
+    <script>
+        // JavaScript for the cursor circle effect with delay
+        const cursorCircle = document.getElementById('cursor-circle');
+        
+        let mouseX = 0, mouseY = 0; // Current mouse position
+        let circleX = 0, circleY = 0; // Position of the circle
+
+        // Update mouse position on mousemove
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        });
+
+        // Animation function to move the circle with a delay
+        function animateCursor() {
+            // Slowly move the circle towards the mouse position
+            circleX += (mouseX - circleX) * 0.1; // 0.1 controls the speed of the delay
+            circleY += (mouseY - circleY) * 0.1; // 0.1 controls the speed of the delay
+
+            // Update the circle's position
+            cursorCircle.style.left = circleX + 'px';
+            cursorCircle.style.top = circleY + 'px';
+
+            requestAnimationFrame(animateCursor); // Continue animating
+        }
+
+        // Start the animation
+        animateCursor();
+    </script>
+</body>
+</html>

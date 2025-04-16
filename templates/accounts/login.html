@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZCreation - Login</title>
+    {% load static %}
+    <style>
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            position: relative; /* Required for the cursor circle to follow */
+        }
+        
+        body.fade-out {
+            opacity: 0;
+        }
+        
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #D2B48C;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        .image-side {
+            flex: 1;
+            background-image: url("{% static 'images/scarf-lady.png' %}");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        
+        .form-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .login-box {
+            width: 500px;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            background-color: #D2B48C;
+            position: relative;
+            left: -50px;
+        }
+        
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #222;
+            text-align: center;
+        }
+        
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus, 
+        input[type="password"]:focus {
+            border-color: #8B4513;
+            outline: none;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+        
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .signup-btn:hover {
+            background-color: #A0522D;
+        }
+        
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .image-side { 
+                display: none; 
+            }
+            
+            body { 
+                flex-direction: column; 
+            }
+            
+            .login-box {
+                left: 0;
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+        
+        /* Circle style for cursor tracking */
+        .cursor-circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #6f4f37; /* Same as the buttons */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-side"></div>
+    <div class="form-side">
+        <div class="login-box">
+            <h2>ZCreation Login</h2>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            
+            <a href="{% url 'signup' %}" class="signup-btn">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Cursor Circle -->
+    <div class="cursor-circle" id="cursor-circle"></div>
+
+    <script>
+        // JavaScript for the cursor circle effect with delay
+        const cursorCircle = document.getElementById('cursor-circle');
+        
+        let mouseX = 0, mouseY = 0; // Current mouse position
+        let circleX = 0, circleY = 0; // Position of the circle
+
+        // Update mouse position on mousemove
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        });
+
+        // Animation function to move the circle with a delay
+        function animateCursor() {
+            // Slowly move the circle towards the mouse position
+            circleX += (mouseX - circleX) * 0.1; // 0.1 controls the speed of the delay
+            circleY += (mouseY - circleY) * 0.1; // 0.1 controls the speed of the delay
+
+            // Update the circle's position
+            cursorCircle.style.left = circleX + 'px';
+            cursorCircle.style.top = circleY + 'px';
+
+            requestAnimationFrame(animateCursor); // Continue animating
+        }
+
+        // Start the animation
+        animateCursor();
+        
+        // Handle page transition for internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            const transitionEl = document.createElement('div');
+            transitionEl.className = 'page-transition';
+            document.body.appendChild(transitionEl);
+            
+            const links = document.querySelectorAll('a[href^="/"], a[href^="http://127.0.0.1:8000/"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (e.ctrlKey || e.metaKey || e.shiftKey || link.target === '_blank') {
+                        return;
+                    }
+                    if (this.origin && this.origin !== window.location.origin) {
+                        return;
+                    }
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    document.body.classList.add('fade-out');
+                    transitionEl.style.opacity = '1';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                });
+            });
+
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    document.body.classList.add('fade-out');
+                    transitionEl.style.opacity = '1';
+                    setTimeout(() => {
+                        form.submit();
+                    }, 500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
