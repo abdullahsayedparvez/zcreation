@@ -1,145 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>ZCreation - Home</title>
+    {% load static %}
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #e2cfc1, #d1b094); /* Light brown gradient */
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            position: relative; /* Required for the circle to follow the cursor */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .container.content {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100vw;
+      }
+      .container {
+        text-align: center;
+        background-color: transparent;
+        border-radius: 15px;
+        padding: 30px 20px;
+        box-shadow: none;
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+      h1 {
+        color: #6f4f37;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #6f4f37;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: #6f4f37;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      a:hover {
+        background-color: #4a3624;
+        transform: scale(1.05);
+      }
+      .navbar {
+        background-color: #6f4f37;
+        overflow: hidden;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        z-index: 10;
+      }
+      .navbar a {
+        float: left;
+        padding: 14px 20px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      .navbar a:hover {
+        background-color: #4a3624;
+        color: white;
+      }
+      .navbar .logout {
+        float: right;
+      }
+      .content {
+        padding-top: 70px;
+        width: 100%;
+      }
+
+      /* Cursor circle */
+      .cursor-circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #6f4f37;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Scroll Gallery wrapper for each track */
+      .scroll-gallery {
+        overflow: hidden;
+        background: linear-gradient(135deg, #f7efe5, #d1b094);
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(111, 79, 55, 0.25);
+        height: 400px; /* increased height */
+        margin: 25px 0;
+        width: 100vw; /* full viewport width */
+        max-width: 100vw; /* no max width constraint */
+        position: relative;
+        box-sizing: border-box; /* include padding/border in width */
+      }
+
+      /* The actual scrolling flex container */
+      .scroll-track {
+        display: flex;
+        gap: 25px;
+        height: 400px; /* increased height */
+        user-select: none;
+      }
+
+      .scroll-track img {
+        width: 480px; /* bigger images */
+        height: 340px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .scroll-track img:hover {
+        transform: scale(1.07);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      @media (max-width: 768px) {
+        .scroll-track img {
+          width: 90vw;
+          height: auto;
+          max-height: 280px;
         }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 30px 50px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 500px;
-            margin: 20px;
-        }
-        h1 {
-            color: #6f4f37; /* A warm brown color for the title */
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #6f4f37;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #6f4f37; /* Dark brown background */
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        a:hover {
-            background-color: #4a3624; /* Slightly darker brown for hover */
-            transform: scale(1.05);
-        }
-        .navbar {
-            background-color: #6f4f37;
-            overflow: hidden;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            z-index: 10;
-        }
-        .navbar a {
-            float: left;
-            padding: 14px 20px;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .navbar a:hover {
-            background-color: #4a3624;
-            color: white;
-        }
-        .navbar .logout {
-            float: right;
-        }
-        .content {
-            padding-top: 70px; /* Space for the navbar */
-        }
-        
-        /* Circle style */
-        .cursor-circle {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #6f4f37;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%); /* Center the circle */
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="{% url 'dashboard' %}">Dashboard</a>
-        <a href="{% url 'profile' %}">Profile</a>
-        <a href="{% url 'settings' %}">Settings</a>
-        <a href="{% url 'logout' %}" class="logout">Logout</a>
+      <a href="{% url 'order_now' %}">Order Now</a>
+      <a href="{% url 'about_us' %}">About Us</a>
+      <a href="{% url 'contact_us' %}">Contact Us</a>
+      <a href="{% url 'logout' %}" class="logout">Logout</a>
     </div>
 
     <div class="container content">
-        <h1>Welcome to ZCreation!</h1>
-        <p>Explore the various sections using the navigation bar above. Customize your experience with our tools and features.</p>
-        <a href="{% url 'dashboard' %}">Go to Dashboard</a>
+      <h1>Explore Our Creations</h1>
+
+      <!-- Track 1 (scroll right) -->
+      <div class="scroll-gallery" id="track1">
+        <div class="scroll-track">
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 1" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 2" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 3" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 4" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 5" />
+        </div>
+      </div>
+
+      <!-- Track 2 (scroll left) -->
+      <div class="scroll-gallery" id="track2">
+        <div class="scroll-track">
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 1" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 2" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 3" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 4" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 5" />
+        </div>
+      </div>
+
+      <!-- Track 3 (scroll right) -->
+      <div class="scroll-gallery" id="track3">
+        <div class="scroll-track">
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 1" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 2" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 3" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 4" />
+          <img src="{% static 'images/hijab-woman.png' %}" alt="Design 5" />
+        </div>
+      </div>
     </div>
 
     <!-- Cursor Circle -->
     <div class="cursor-circle" id="cursor-circle"></div>
 
     <script>
-        // JavaScript for the cursor circle effect with delay
-        const cursorCircle = document.getElementById('cursor-circle');
-        
-        let mouseX = 0, mouseY = 0; // Current mouse position
-        let circleX = 0, circleY = 0; // Position of the circle
+      // Cursor circle effect
+      const cursorCircle = document.getElementById("cursor-circle");
+      let mouseX = 0,
+        mouseY = 0;
+      let circleX = 0,
+        circleY = 0;
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      });
+      function animateCursor() {
+        circleX += (mouseX - circleX) * 0.1;
+        circleY += (mouseY - circleY) * 0.1;
+        cursorCircle.style.left = circleX + "px";
+        cursorCircle.style.top = circleY + "px";
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
 
-        // Update mouse position on mousemove
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.pageX;
-            mouseY = event.pageY;
-        });
+      // Auto scrolling function for each track with smooth continuous scrolling
+      function setupAutoScroll(trackId, direction = "right", speed = 0.3) {
+        const trackWrapper = document.getElementById(trackId);
+        const track = trackWrapper.querySelector(".scroll-track");
 
-        // Animation function to move the circle with a delay
-        function animateCursor() {
-            // Slowly move the circle towards the mouse position
-            circleX += (mouseX - circleX) * 0.1; // 0.1 controls the speed of the delay
-            circleY += (mouseY - circleY) * 0.1; // 0.1 controls the speed of the delay
+        // Duplicate the images for seamless infinite scroll
+        track.innerHTML += track.innerHTML;
 
-            // Update the circle's position
-            cursorCircle.style.left = circleX + 'px';
-            cursorCircle.style.top = circleY + 'px';
+        let scrollPos = 0;
 
-            requestAnimationFrame(animateCursor); // Continue animating
+        function step() {
+          if (direction === "right") {
+            scrollPos += speed;
+            if (scrollPos >= track.scrollWidth / 2) {
+              scrollPos -= track.scrollWidth / 2;
+            }
+          } else {
+            scrollPos -= speed;
+            if (scrollPos <= 0) {
+              scrollPos += track.scrollWidth / 2;
+            }
+          }
+          trackWrapper.scrollLeft = scrollPos;
+          requestAnimationFrame(step);
         }
 
-        // Start the animation
-        animateCursor();
+        step();
+      }
+
+      // Initialize auto scroll for all 3 tracks with slower speeds
+      setupAutoScroll("track1", "right", 0.3);
+      setupAutoScroll("track2", "left", 0.2);
+      setupAutoScroll("track3", "right", 0.35);
     </script>
-</body>
+  </body>
 </html>

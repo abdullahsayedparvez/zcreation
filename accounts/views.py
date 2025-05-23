@@ -58,11 +58,11 @@ def intro_view(request):
     return render(request, 'intro.html')
 
 
-def dashboard(request):
-    return render(request, 'dashboard_placeholder.html')  # Placeholder page
+def order_now(request):
+    return render(request, 'order_now.html')  # Placeholder page
 
-def profile(request):
-    return render(request, 'profile_placeholder.html')  # Placeholder page
+def about_us(request):
+    return render(request, 'about_us.html')  # Placeholder page
 
-def settings(request):
-    return render(request, 'settings_placeholder.html')  # Placeholder page
+def contact_us(request):
+    return render(request, 'contact_us.html')  # Placeholder page

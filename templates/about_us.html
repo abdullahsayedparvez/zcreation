@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us - ZCreation</title>
+  {% load static %}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #f7efe5, #d1b094);
+      font-family: Arial, sans-serif;
+      color: #6f4f37;
+    }
+
+    .navbar {
+      background-color: #6f4f37;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: transparent;
+      border: 1px solid white;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: white;
+      color: #6f4f37;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(111, 79, 55, 0.2);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #6f4f37;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #4a3624;
+    }
+
+    .team-section {
+      margin-top: 40px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .team-member {
+      background-color: #f7efe5;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .team-member img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+      margin: 10px 0 5px;
+    }
+
+    .team-member p {
+      font-size: 14px;
+      color: #6f4f37;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="{% url 'home' %}">&#8592; Back</a>
+  </div>
+
+  <div class="container">
+    <h1>About Us</h1>
+    <p>
+      Welcome to <span class="highlight">ZCreation</span>, where passion meets creativity. We specialize in delivering elegant, custom-crafted designs tailored to your vision.
+    </p>
+    <p>
+      Our goal is to empower individuals and brands with styles that speak louder than words. Whether it's a traditional motif or a modern twist, we aim to capture it perfectly.
+    </p>
+    <p>
+      At ZCreation, every creation is a <span class="highlight">story of identity</span>—and we’re here to help you tell yours.
+    </p>
+
+    <div class="team-section">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="{% static 'images/team1.jpg' %}" alt="Team Member 1">
+          <h3>Aisha Khan</h3>
+          <p>Creative Director</p>
+        </div>
+        <div class="team-member">
+          <img src="{% static 'images/team2.jpg' %}" alt="Team Member 2">
+          <h3>Raza Ali</h3>
+          <p>Lead Designer</p>
+        </div>
+        <div class="team-member">
+          <img src="{% static 'images/team3.jpg' %}" alt="Team Member 3">
+          <h3>Sana Malik</h3>
+          <p>Marketing Head</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

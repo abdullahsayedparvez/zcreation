@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ZCreation - Explore</title>
+    {% load static %}
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #f7efe5;
+        font-family: Arial, sans-serif;
+      }
+
+      .header-bar {
+        background-color: #6f4f37;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        z-index: 10;
+      }
+
+      /* Back button styles */
+      .header-bar button.back {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px; /* Bigger arrow like previous */
+        font-weight: normal;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+      }
+
+      /* Logout link styles */
+      .header-bar a.logout {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .content {
+        padding-top: 70px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1,
+      p,
+      button,
+      select,
+      input,
+      a {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #6f4f37;
+        margin-bottom: 30px;
+      }
+
+      .filters {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        width: 250px;
+      }
+
+      select {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        width: 130px;
+      }
+
+      button.search-button {
+        padding: 10px 20px;
+        background-color: #6f4f37;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.search-button:hover {
+        background-color: #4a3624;
+      }
+
+      /* Cursor circle */
+      .cursor-circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #6f4f37;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Minimal Header -->
+    <div class="header-bar">
+      <button onclick="history.back()" class="back" aria-label="Go Back">&#8592;</button>
+      <a href="{% url 'logout' %}" class="logout">Logout</a>
+    </div>
+
+    <div class="content">
+      <h1>Search Designs</h1>
+      <div class="filters">
+        <input type="text" placeholder="Search..." />
+        <select>
+          <option value="">Size</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <select>
+          <option value="">Colour</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="beige">Beige</option>
+          <option value="brown">Brown</option>
+        </select>
+        <button class="search-button">Search</button>
+      </div>
+    </div>
+
+    <!-- Cursor Circle -->
+    <div class="cursor-circle" id="cursor-circle"></div>
+
+    <script>
+      // Cursor circle effect
+      const cursorCircle = document.getElementById("cursor-circle");
+      let mouseX = 0,
+        mouseY = 0;
+      let circleX = 0,
+        circleY = 0;
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      });
+      function animateCursor() {
+        circleX += (mouseX - circleX) * 0.1;
+        circleY += (mouseY - circleY) * 0.1;
+        cursorCircle.style.left = circleX + "px";
+        cursorCircle.style.top = circleY + "px";
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    </script>
+  </body>
+</html>
