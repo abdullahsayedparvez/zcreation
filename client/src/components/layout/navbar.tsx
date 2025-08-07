@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import zcreationLogo from "@assets/Zcreation Logo_1754557221878.png";
+import zcreationLogo from "@assets/Zcreation Logo_1754557374535.png";
 
 export default function Navbar() {
   const [location] = useLocation();
