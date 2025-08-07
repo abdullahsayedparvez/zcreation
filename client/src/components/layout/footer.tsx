@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Twitter, Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import zcreationLogo from "@assets/Zcreation Logo_1754559093824.png";
 
 export default function Footer() {
@@ -22,12 +22,6 @@ export default function Footer() {
               Empowering women through elegant, high-quality hijabs that celebrate both tradition and contemporary style.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-primary-300 transition-colors duration-300"
-              >
-                <Twitter className="w-6 h-6" />
-              </a>
               <a
                 href="#"
                 className="text-gray-300 hover:text-rose-400 transition-colors duration-300"

@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Lightbulb, DollarSign } from "lucide-react";
+import { Heart, Lightbulb, Banknote } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Product } from "@/lib/types";
 import hijabImage from "@assets/DALL·E 2025-01-28 11.25.33 - A traditional Saudi-style Islamic hijab, featuring elegant and modest design. The fabric is soft and flowing, with intricate embroidery in gold or sil_1754556878214.webp";
@@ -30,19 +30,20 @@ export default function Home() {
           className="relative h-screen bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${hijabImage})`,
+            backgroundPosition: 'center 40%',
           }}
         >
           <div className="relative z-20 flex items-center justify-center h-full">
             <div className="text-center px-4 max-w-4xl mx-auto animate-fade-in">
               <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
-                Elegant Modest Fashion
+                Islamic Modest Fashion
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-2xl mx-auto">
-                Discover the perfect blend of style, comfort, and modesty with ZCreation's premium hijab collection
+                Beautiful hijabs and scarfs that honor Islamic values while embracing contemporary elegance and comfort
               </p>
               <div className="space-x-4">
                 <Link href="/products">
-                  <Button className="bg-primary-300 text-white px-8 py-3 rounded-full font-poppins font-medium hover:bg-primary-400 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white px-8 py-3 rounded-full font-poppins font-medium hover:bg-white hover:text-primary-600 hover:border-white transition-all duration-300 shadow-lg">
                     Explore Collection
                   </Button>
                 </Link>
@@ -67,7 +68,7 @@ export default function Home() {
               Why Choose ZCreation?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine traditional values with contemporary style to create hijabs that empower and inspire
+              We offer multiple colors and designs with customizable sizes for scarfs, ensuring the perfect fit for every woman
             </p>
           </div>
 
@@ -89,7 +90,7 @@ export default function Home() {
                 <Lightbulb className="w-8 h-8 text-rose-400" />
               </div>
               <h3 className="text-2xl font-playfair font-semibold text-gray-800 mb-4">
-                Modern Designs
+                Custom Design & Size
               </h3>
               <p className="text-gray-600">
                 Contemporary styles that reflect current fashion trends while honoring traditional values
@@ -98,7 +99,7 @@ export default function Home() {
 
             <div className="text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <DollarSign className="w-8 h-8 text-primary-300" />
+                <Banknote className="w-8 h-8 text-primary-300" />
               </div>
               <h3 className="text-2xl font-playfair font-semibold text-gray-800 mb-4">
                 Fair Pricing

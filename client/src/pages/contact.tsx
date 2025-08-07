@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Clock, Twitter, Instagram, Facebook } from "lucide-react";
+import { Mail, Phone, Clock, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -188,8 +188,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-poppins font-semibold text-gray-800 mb-1">Email</h3>
-                    <p className="text-gray-600">hello@zcreation.com</p>
-                    <p className="text-gray-600">support@zcreation.com</p>
+                    <p className="text-gray-600">zcreation9892@gmail.com</p>
                   </div>
                 </div>
 
@@ -199,24 +198,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-poppins font-semibold text-gray-800 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600 text-sm">Mon - Fri, 9AM - 6PM EST</p>
+                    <p className="text-gray-600">+91 9136786290</p>
+                    <p className="text-gray-600">+91 9892692952</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                    <MapPin className="w-6 h-6 text-primary-300" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-poppins font-semibold text-gray-800 mb-1">Address</h3>
-                    <p className="text-gray-600">
-                      123 Fashion Street<br />
-                      New York, NY 10001<br />
-                      United States
-                    </p>
-                  </div>
-                </div>
+
 
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4 mt-1">
@@ -235,12 +222,6 @@ export default function Contact() {
               <div className="mt-12">
                 <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="w-10 h-10 bg-primary-300 text-white rounded-full flex items-center justify-center hover:bg-primary-400 transition-colors duration-300"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
                   <a
                     href="#"
                     className="w-10 h-10 bg-rose-400 text-white rounded-full flex items-center justify-center hover:bg-rose-500 transition-colors duration-300"
