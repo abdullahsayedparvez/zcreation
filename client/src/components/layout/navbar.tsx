@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import zcreationLogo from "@assets/Zcreation Logo_1754557221878.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -29,9 +30,16 @@ export default function Navbar() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/" onClick={closeMobileMenu}>
-                <h1 className="text-2xl font-playfair font-bold text-primary-300 hover:text-primary-400 transition-colors duration-300">
-                  ZCreation
-                </h1>
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src={zcreationLogo} 
+                    alt="ZCreation Logo" 
+                    className="h-10 w-auto"
+                  />
+                  <h1 className="text-2xl font-playfair font-bold text-primary-300 hover:text-primary-400 transition-colors duration-300">
+                    ZCreation
+                  </h1>
+                </div>
               </Link>
             </div>
           </div>

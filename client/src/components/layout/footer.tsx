@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Twitter, Instagram, Facebook } from "lucide-react";
+import zcreationLogo from "@assets/Zcreation Logo_1754557221878.png";
 
 export default function Footer() {
   return (
@@ -7,9 +8,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-3xl font-playfair font-bold text-primary-300 mb-4">
-              ZCreation
-            </h3>
+            <div className="flex items-center space-x-4 mb-4">
+              <img 
+                src={zcreationLogo} 
+                alt="ZCreation Logo" 
+                className="h-12 w-auto"
+              />
+              <h3 className="text-3xl font-playfair font-bold text-primary-300">
+                ZCreation
+              </h3>
+            </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Empowering women through elegant, high-quality hijabs that celebrate both tradition and contemporary style.
             </p>
