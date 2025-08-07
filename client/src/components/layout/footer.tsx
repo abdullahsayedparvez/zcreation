@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Twitter, Instagram, Facebook } from "lucide-react";
-import zcreationLogo from "@assets/Zcreation Logo_1754557374535.png";
+import zcreationLogo from "@assets/Zcreation Logo_1754559093824.png";
 
 export default function Footer() {
   return (
