@@ -1,58 +1,72 @@
 [
   {
     "id": 1,
-    "name": "Elegant Black Hijab",
-    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "A timeless black hijab made of soft chiffon material, perfect for any occasion. This elegant piece combines traditional modesty with contemporary style.",
-    "link": "https://example.com/products/elegant-black-hijab"
+    "name": "Classic Black Chiffon Hijab",
+    "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "A timeless black hijab crafted from premium soft chiffon material. Perfect for daily wear and special occasions, offering elegant draping and breathable comfort.",
+    "link": "https://example.com/products/classic-black-chiffon-hijab"
   },
   {
     "id": 2,
-    "name": "Rose Garden Hijab",
-    "image": "https://images.unsplash.com/photo-1616683693504-3536448358be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Delicate floral patterns in soft rose tones, made from premium silk blend. Perfect for special occasions and everyday elegance.",
-    "link": "https://example.com/products/rose-garden-hijab"
+    "name": "Silk Rose Printed Scarf",
+    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Delicate rose patterns on luxurious silk blend fabric. This versatile scarf can be styled as a hijab or fashion accessory with sophisticated appeal.",
+    "link": "https://example.com/products/silk-rose-printed-scarf"
   },
   {
     "id": 3,
-    "name": "Golden Hour Hijab",
-    "image": "https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Luxurious silk blend in warm golden tones, perfect for special occasions. The shimmering finish adds a touch of sophistication.",
-    "link": "https://example.com/products/golden-hour-hijab"
+    "name": "Golden Shimmer Hijab",
+    "image": "https://images.unsplash.com/photo-1616683693504-3536448358be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Elegant hijab with subtle golden shimmer threads woven throughout. Perfect for evening events and celebrations, adding a touch of glamour to modest fashion.",
+    "link": "https://example.com/products/golden-shimmer-hijab"
   },
   {
     "id": 4,
-    "name": "Ocean Breeze Hijab",
-    "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Elegant navy blue with subtle shimmer, crafted from breathable cotton. Ideal for both professional and casual settings.",
-    "link": "https://example.com/products/ocean-breeze-hijab"
+    "name": "Navy Cotton Blend Hijab",
+    "image": "https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Professional navy blue hijab made from breathable cotton blend. Ideal for work and formal settings with its sophisticated color and comfortable fit.",
+    "link": "https://example.com/products/navy-cotton-blend-hijab"
   },
   {
     "id": 5,
-    "name": "Ivory Dreams Hijab",
-    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Pure ivory with delicate lace trim, perfect for weddings and formal events. The luxurious fabric drapes beautifully.",
-    "link": "https://example.com/products/ivory-dreams-hijab"
+    "name": "Ivory Lace Trim Hijab",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Pure ivory hijab with delicate hand-sewn lace trim along the edges. Perfect for weddings, religious ceremonies, and formal occasions.",
+    "link": "https://example.com/products/ivory-lace-trim-hijab"
   },
   {
     "id": 6,
-    "name": "Burgundy Elegance Hijab",
-    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Rich burgundy color with satin finish, ideal for autumn and winter styling. The deep color complements all skin tones.",
-    "link": "https://example.com/products/burgundy-elegance-hijab"
+    "name": "Burgundy Satin Finish Hijab",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Rich burgundy hijab with luxurious satin finish. The deep wine color complements all skin tones and adds elegance to autumn and winter outfits.",
+    "link": "https://example.com/products/burgundy-satin-finish-hijab"
   },
   {
     "id": 7,
-    "name": "Emerald Grace Hijab",
-    "image": "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Vibrant emerald green with geometric patterns, made from sustainable fabric. A modern twist on traditional design.",
-    "link": "https://example.com/products/emerald-grace-hijab"
+    "name": "Emerald Green Geometric Scarf",
+    "image": "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Vibrant emerald green hijab featuring modern geometric patterns. Made from eco-friendly fabric with contemporary designs for the modern modest woman.",
+    "link": "https://example.com/products/emerald-geometric-scarf"
   },
   {
     "id": 8,
-    "name": "Lavender Serenity Hijab",
-    "image": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    "description": "Soft lavender with embroidered details, perfect for everyday elegance. The gentle color brings a sense of calm and grace.",
-    "link": "https://example.com/products/lavender-serenity-hijab"
+    "name": "Lavender Embroidered Hijab",
+    "image": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Soft lavender hijab with intricate floral embroidery details. The delicate stitching and gentle color create a serene and graceful appearance.",
+    "link": "https://example.com/products/lavender-embroidered-hijab"
+  },
+  {
+    "id": 9,
+    "name": "Pearl White Silk Hijab",
+    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Premium pearl white silk hijab with natural luster. Lightweight and breathable, perfect for summer wear and special occasions requiring elegance.",
+    "link": "https://example.com/products/pearl-white-silk-hijab"
+  },
+  {
+    "id": 10,
+    "name": "Dusty Rose Crinkle Hijab",
+    "image": "https://images.unsplash.com/photo-1616683693504-3536448358be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
+    "description": "Beautiful dusty rose hijab with natural crinkle texture. No-iron fabric that maintains its elegant appearance throughout the day with minimal care.",
+    "link": "https://example.com/products/dusty-rose-crinkle-hijab"
   }
 ]

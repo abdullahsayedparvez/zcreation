@@ -48,8 +48,7 @@ export default function Home() {
                 </Link>
                 <Link href="/about">
                   <Button
-                    variant="outline"
-                    className="border-2 border-white text-white px-8 py-3 rounded-full font-poppins font-medium hover:bg-white hover:text-primary-300 transition-all duration-300"
+                    className="bg-white/10 backdrop-blur-sm border-2 border-white/50 text-white px-8 py-3 rounded-full font-poppins font-medium hover:bg-white hover:text-primary-600 hover:border-white transition-all duration-300 shadow-lg"
                   >
                     Our Story
                   </Button>
