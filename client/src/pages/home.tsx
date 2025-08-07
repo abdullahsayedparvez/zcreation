@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Lightbulb, DollarSign } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Product } from "@/lib/types";
+import hijabImage from "@assets/DALL·E 2025-01-28 11.25.33 - A traditional Saudi-style Islamic hijab, featuring elegant and modest design. The fabric is soft and flowing, with intricate embroidery in gold or sil_1754556878214.webp";
+import childrenImage from "@assets/children-g0fdd56c8a_1280_1754557049130.jpg";
 
 export default function Home() {
   const { data: products = [] } = useQuery<Product[]>({
@@ -27,7 +29,7 @@ export default function Home() {
         <div
           className="relative h-screen bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`,
+            backgroundImage: `url(${hijabImage})`,
           }}
         >
           <div className="relative z-20 flex items-center justify-center h-full">
@@ -111,8 +113,17 @@ export default function Home() {
       </section>
 
       {/* Featured Products Preview */}
-      <section className="py-16 md:py-24 bg-primary-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{
+              backgroundImage: `url(${childrenImage})`,
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-primary-50/90"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-gray-800 mb-4">
               Featured Collection
