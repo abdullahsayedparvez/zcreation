@@ -35,11 +35,11 @@ export default function Home() {
         >
           <div className="relative z-20 flex items-center justify-center h-full">
             <div className="text-center px-4 max-w-4xl mx-auto animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 leading-tight">
-                Islamic Modest Fashion
+              <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Modest Islamic Wear
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-2xl mx-auto">
-                Beautiful hijabs and scarfs that honor Islamic values while embracing contemporary elegance and comfort
+              <p className="text-xl md:text-2xl text-white mb-8 font-light max-w-2xl mx-auto drop-shadow-md bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4">
+                Premium hijabs and scarfs crafted with care to honor Islamic traditions while providing comfort and dignity
               </p>
               <div className="space-x-4">
                 <Link href="/products">
