@@ -4,10 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ProductModal from "@/components/ui/product-modal";
 import { Product } from "@/lib/types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({});
 
   const { data: products = [], isLoading, error } = useQuery<Product[]>({
     queryKey: ['/src/data/products.json'],
@@ -28,6 +30,20 @@ export default function Products() {
   const closeProductModal = () => {
     setIsModalOpen(false);
     setSelectedProduct(null);
+  };
+
+  const handlePrevImage = (productId: number, total: number) => {
+    setImageIndexes((prev) => ({
+      ...prev,
+      [productId]: (prev[productId] ?? 0) === 0 ? total - 1 : (prev[productId] ?? 0) - 1,
+    }));
+  };
+
+  const handleNextImage = (productId: number, total: number) => {
+    setImageIndexes((prev) => ({
+      ...prev,
+      [productId]: (prev[productId] ?? 0) === total - 1 ? 0 : (prev[productId] ?? 0) + 1,
+    }));
   };
 
   if (isLoading) {
@@ -77,37 +93,60 @@ export default function Products() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {products.map((product, index) => (
-                <Card
-                  key={product.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600';
-                    }}
-                  />
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 mb-4 text-sm line-clamp-3">
-                      {product.description}
-                    </p>
-                    <Button
-                      onClick={() => openProductModal(product)}
-                      className="w-full bg-primary-300 text-white py-2 rounded-lg hover:bg-primary-400 transition-colors duration-300"
-                    >
-                      View Details
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+              {products.map((product, index) => {
+                const images = [product.image1, product.image2, product.image3].filter(Boolean);
+                const currentIndex = imageIndexes[product.id] ?? 0;
+
+                return (
+                  <Card
+                    key={product.id}
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="relative w-full h-64">
+                      <img
+                        src={images[currentIndex] || product.image || ''}
+                        alt={product.name}
+                        className="w-full h-64 object-contain bg-white"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600';
+                        }}
+                      />
+                      {images.length > 1 && (
+                        <>
+                          <button
+                            onClick={() => handlePrevImage(product.id, images.length)}
+                            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 p-1 rounded-full"
+                          >
+                            <ChevronLeft className="w-5 h-5" />
+                          </button>
+                          <button
+                            onClick={() => handleNextImage(product.id, images.length)}
+                            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 p-1 rounded-full"
+                          >
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                        </>
+                      )}
+                    </div>
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm line-clamp-3">
+                        {product.description}
+                      </p>
+                      <Button
+                        onClick={() => openProductModal(product)}
+                        className="w-full bg-primary-300 text-white py-2 rounded-lg hover:bg-primary-400 transition-colors duration-300"
+                      >
+                        View Details
+                      </Button>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </div>

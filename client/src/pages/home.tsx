@@ -1,11 +1,12 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Lightbulb, Banknote } from "lucide-react";
+import { Heart, Lightbulb, Banknote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Product } from "@/lib/types";
 import hijabImage from "@assets/DALL·E 2025-01-28 11.25.33 - A traditional Saudi-style Islamic hijab, featuring elegant and modest design. The fabric is soft and flowing, with intricate embroidery in gold or sil_1754556878214.webp";
 import childrenImage from "@assets/children-g0fdd56c8a_1280_1754557049130.jpg";
+import { useState } from "react";
 
 export default function Home() {
   const { data: products = [] } = useQuery<Product[]>({
@@ -20,6 +21,25 @@ export default function Home() {
   });
 
   const featuredProducts = products.slice(0, 3);
+  const [imageIndexes, setImageIndexes] = useState<number[]>(
+    featuredProducts.map(() => 0)
+  );
+
+  const handlePrevImage = (productIndex: number, total: number) => {
+    setImageIndexes((prev) => {
+      const newIndexes = [...prev];
+      newIndexes[productIndex] = (prev[productIndex] - 1 + total) % total;
+      return newIndexes;
+    });
+  };
+
+  const handleNextImage = (productIndex: number, total: number) => {
+    setImageIndexes((prev) => {
+      const newIndexes = [...prev];
+      newIndexes[productIndex] = (prev[productIndex] + 1) % total;
+      return newIndexes;
+    });
+  };
 
   return (
     <div>
@@ -117,9 +137,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-            style={{
-              backgroundImage: `url(${childrenImage})`,
-            }}
+            style={{ backgroundImage: `url(${childrenImage})` }}
           ></div>
           <div className="absolute inset-0 bg-primary-50/90"></div>
         </div>
@@ -134,28 +152,52 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
-              <Card
-                key={product.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover"
-                />
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
-                  <Button className="w-full bg-primary-300 text-white py-2 rounded-lg hover:bg-primary-400 transition-colors duration-300">
-                    View Details
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {featuredProducts.map((product, index) => {
+              const images = [product.image1, product.image2, product.image3].filter(Boolean);
+              const currentIndex = imageIndexes[index] || 0;
+
+              return (
+                <Card
+                  key={product.id}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-scale-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="relative w-full h-64">
+                    <img
+                      src={images[currentIndex]}
+                      alt={product.name}
+                      className="w-full h-64 object-contain"
+                    />
+                    {images.length > 1 && (
+                      <>
+                        <button
+                          onClick={() => handlePrevImage(index, images.length)}
+                          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 p-1 rounded-full"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleNextImage(index, images.length)}
+                          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 p-1 rounded-full"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </>
+                    )}
+                  </div>
+
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-2">
+                      {product.name}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                    <Button className="w-full bg-primary-300 text-white py-2 rounded-lg hover:bg-primary-400 transition-colors duration-300">
+                      View Details
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           <div className="text-center mt-12">
