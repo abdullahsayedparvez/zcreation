@@ -78,12 +78,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-poppins font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2">
-              <p className="text-gray-300">hello@zcreation.com</p>
-              <p className="text-gray-300">+1 (555) 123-4567</p>
-              <p className="text-gray-300">
+              <p className="text-gray-300">zcreation989@gmail.com.com</p>
+              <p className="text-gray-300">+91 9136786290 / +91 9136786290</p>
+              {/* <p className="text-gray-300">
                 123 Fashion Street<br />
                 New York, NY 10001
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

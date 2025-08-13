@@ -85,12 +85,12 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="animate-slide-up">
-              <h2 className="text-3xl font-playfair font-bold text-gray-800 mb-8">
+            {/* <div className="animate-slide-up"> */}
+              {/* <h2 className="text-3xl font-playfair font-bold text-gray-800 mb-8">
                 Send us a Message
-              </h2>
+              </h2> */}
 
-              <Form {...form}>
+              {/* <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
                     control={form.control}
@@ -162,18 +162,18 @@ export default function Contact() {
                     {contactMutation.isPending ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
-              </Form>
+              </Form> */}
 
               {/* Success Message */}
-              {showSuccessMessage && (
+              {/* {showSuccessMessage && (
                 <div className="mt-6 p-4 bg-green-100 border border-green-300 text-green-700 rounded-lg animate-fade-in">
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 mr-2" />
                     Thank you! Your message has been sent successfully. We'll get back to you soon.
                   </div>
                 </div>
-              )}
-            </div>
+              )} */}
+            {/* </div> */}
 
             {/* Contact Information */}
             <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -188,7 +188,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-poppins font-semibold text-gray-800 mb-1">Email</h3>
-                    <p className="text-gray-600">zcreation9892@gmail.com</p>
+                    <p className="text-gray-600">zcreation989@gmail.com</p>
                   </div>
                 </div>
 
@@ -205,7 +205,7 @@ export default function Contact() {
 
 
 
-                <div className="flex items-start">
+                {/*<div className="flex items-start">
                   <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mr-4 mt-1">
                     <Clock className="w-6 h-6 text-rose-400" />
                   </div>
@@ -215,7 +215,7 @@ export default function Contact() {
                     <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
-                </div>
+                </div>*/}
               </div>
 
               {/* Social Links */}
