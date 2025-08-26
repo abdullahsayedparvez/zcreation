@@ -1,100 +1,100 @@
 [
   {
     "id": 1,
-    "name": "Yellow Leaf",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/leave_cream2.png?raw=true",
-    "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/leave_cream_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/leave_cream_face_zoom.png?raw=true",
+    "name": "Sunflower Touch",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/sunflower_sidepng.png?raw=true",
+    "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/sunflower_back.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/sunflower_front.png?raw=true",
     "description": "A timeless black hijab crafted from premium soft chiffon material. Perfect for daily wear and special occasions, offering elegant draping and breathable comfort.",
     "link": "https://example.com/products/classic-black-chiffon-hijab"
   },
   {
     "id": 2,
-    "name": "Zigzag Orange",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/orange_line_shade_front.png?raw=true",
-    "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Orange_line_shade_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Orange_line_shade_side.png?raw=true",
+    "name": "Red Mix Flora",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/red%20punch%20side.png?raw=true",
+    "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/red%20punch%20back.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Red%20punch%20front.png?raw=true",
     "description": "Delicate rose patterns on luxurious silk blend fabric. This versatile scarf can be styled as a hijab or fashion accessory with sophisticated appeal.",
     "link": "https://example.com/products/silk-rose-printed-scarf"
   },
   {
     "id": 3,
     "name": "Mix Flora",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Graceful_Floral_front%20.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Graceful_floral_side.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Gracefull_floral_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Graceful_floral_side.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Graceful_Floral_front%20.png?raw=true",
     "description": "Elegant hijab with subtle golden shimmer threads woven throughout. Perfect for evening events and celebrations, adding a touch of glamour to modest fashion.",
     "link": "https://example.com/products/golden-shimmer-hijab"
   },
   {
     "id": 4,
     "name": "Pink Flowers",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Pink%20Mukena%20front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Pink%20Mukena%20front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Pink%20Mukena%20back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Pink%20Mukena%20side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Pink%20Mukena%20side.png?raw=true",
     "description": "Professional navy blue hijab made from breathable cotton blend. Ideal for work and formal settings with its sophisticated color and comfortable fit.",
     "link": "https://example.com/products/navy-cotton-blend-hijab"
   },
   {
     "id": 5,
     "name": "Moon Light",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Black_floral_front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Black_floral_front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Black_floral_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Black_floral_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Black_floral_side.png?raw=true",
     "description": "Pure ivory hijab with delicate hand-sewn lace trim along the edges. Perfect for weddings, religious ceremonies, and formal occasions.",
     "link": "https://example.com/products/ivory-lace-trim-hijab"
   },
   {
     "id": 6,
     "name": "White Heart",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Heart_white_front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Heart_white_front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Heart_white_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Heart_white_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Heart_white_side.png?raw=true",
     "description": "Rich burgundy hijab with luxurious satin finish. The deep wine color complements all skin tones and adds elegance to autumn and winter outfits.",
     "link": "https://example.com/products/burgundy-satin-finish-hijab"
   },
   {
     "id": 7,
     "name": "Purple way",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Purple_flora_front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Purple_flora_front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/purple_flora_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Purple_flora_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Purple_flora_side.png?raw=true",
     "description": "Vibrant emerald green hijab featuring modern geometric patterns. Made from eco-friendly fabric with contemporary designs for the modern modest woman.",
     "link": "https://example.com/products/emerald-geometric-scarf"
   },
   {
     "id": 8,
     "name": "Gray way",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Greenish_flora_front_.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Greenish_flora_front_.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Greenish_flora_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Greenish_flora_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Greenish_flora_side.png?raw=true",
     "description": "Soft lavender hijab with intricate floral embroidery details. The delicate stitching and gentle color create a serene and graceful appearance.",
     "link": "https://example.com/products/lavender-embroidered-hijab"
   },
   {
     "id": 9,
     "name": "Shine Hijab",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Sky_blue_front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Sky_blue_front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Sky_blue_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Sky_blue_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/Sky_blue_side.png?raw=true",
     "description": "Premium pearl white silk hijab with natural luster. Lightweight and breathable, perfect for summer wear and special occasions requiring elegance.",
     "link": "https://example.com/products/pearl-white-silk-hijab"
   },
   {
     "id": 10,
     "name": "Milk White",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/White_front.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/White_front.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/White_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/white_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/white_side.png?raw=true",
     "description": "Beautiful dusty rose hijab with natural crinkle texture. No-iron fabric that maintains its elegant appearance throughout the day with minimal care.",
     "link": "https://example.com/products/dusty-rose-crinkle-hijab"
   },
   {
     "id": 11,
     "name": "Green Relief",
-    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/green_leaf_front_.png?raw=true",
+    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/green_leaf_front_.png?raw=true",
     "image2": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/grren_leaf_back.png?raw=true",
-    "image3": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/green_leaf_side.png?raw=true",
+    "image1": "https://github.com/abdullahsayedparvez/zcreation_products/blob/main/green_leaf_side.png?raw=true",
     "description": "Beautiful dusty rose hijab with natural crinkle texture. No-iron fabric that maintains its elegant appearance throughout the day with minimal care.",
     "link": "https://example.com/products/dusty-rose-crinkle-hijab"
   }
