@@ -223,17 +223,18 @@ export default function Contact() {
                 <h3 className="text-xl font-playfair font-semibold text-gray-800 mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/zcreation2025/?next=%2F&hl=en"
+                    target="_blank"
                     className="w-10 h-10 bg-rose-400 text-white rounded-full flex items-center justify-center hover:bg-rose-500 transition-colors duration-300"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="w-10 h-10 bg-primary-300 text-white rounded-full flex items-center justify-center hover:bg-primary-400 transition-colors duration-300"
                   >
                     <Facebook className="w-5 h-5" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

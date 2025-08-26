@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-4 mb-4">
-              <img 
-                src={zcreationLogo} 
-                alt="ZCreation Logo" 
+              <img
+                src={zcreationLogo}
+                alt="ZCreation Logo"
                 className="h-12 w-auto"
               />
               <h3 className="text-3xl font-playfair font-bold text-primary-300">
@@ -19,26 +19,30 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Empowering women through elegant, high-quality hijabs that celebrate both tradition and contemporary style.
+              Crafting hijabs that reflect faith, comfort, and tradition.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/zcreation2025/?next=%2F&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-300 hover:text-rose-400 transition-colors duration-300"
               >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-gray-300 hover:text-primary-300 transition-colors duration-300"
               >
                 <Facebook className="w-6 h-6" />
-              </a>
+              </a> */}
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-poppins font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-poppins font-semibold mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -76,10 +80,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-poppins font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-poppins font-semibold mb-4">
+              Contact Info
+            </h4>
             <div className="space-y-2">
               <p className="text-gray-300">zcreation989@gmail.com.com</p>
-              <p className="text-gray-300">+91 9136786290 / +91 9136786290</p>
+              <p className="text-gray-300">+91 9136786290 / +91 9892692952</p>
               {/* <p className="text-gray-300">
                 123 Fashion Street<br />
                 New York, NY 10001
@@ -90,7 +96,8 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-300">
-            &copy; 2024 ZCreation. All rights reserved. Designed with ❤️ for modest fashion.
+            &copy; 2024 Zcreation. All rights reserved. Created with ❤️ to
+            support every prayer.
           </p>
         </div>
       </div>
