@@ -1,10 +1,11 @@
-import type { Express } from "express";
-import { insertContactMessageSchema } from "../shared/schema.js";
+// server/routes.ts (source)
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
+// ✅ use .js so Node ESM can resolve it after build
+import { insertContactMessageSchema } from "../shared/schema.js";
+
 export async function registerRoutes(app: Express): Promise<void> {
-  // Contact form endpoint (no storage, just echo back)
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactMessageSchema.parse(req.body);
