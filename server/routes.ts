@@ -1,5 +1,5 @@
 import type { Express } from "express";
-import { insertContactMessageSchema } from "../shared/schema";
+import { insertContactMessageSchema } from "../shared/schema.js";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
