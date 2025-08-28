@@ -1,9 +1,11 @@
+// server/index.ts
 import express from "express";
 import { registerRoutes } from "./routes.js";
 import { setupVite, serveStatic, log } from "./vite.js";
 
 async function startServer() {
   const app = express();
+
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
@@ -42,14 +44,14 @@ async function startServer() {
     res.status(status).json({ message });
   });
 
-  // Vite dev vs static prod
+  // Dev vs Prod
   if (app.get("env") === "development") {
     await setupVite(app, undefined);
   } else {
     serveStatic(app);
   }
 
-  // Local standalone server
+  // Run server locally
   if (process.env.VERCEL !== "1") {
     const port = Number(process.env.PORT || 5000);
     app.listen(port, () => log(`Server running at http://localhost:${port}`));
@@ -58,6 +60,10 @@ async function startServer() {
   return app;
 }
 
-// Immediately-invoked async function
-const app = await startServer();
-export default app;
+// Wrap in IIFE to handle async
+let appInstance: any;
+(async () => {
+  appInstance = await startServer();
+})();
+
+export default appInstance;
