@@ -2,7 +2,7 @@ import express from "express";
 import { registerRoutes } from "./routes.js";
 import { setupVite, serveStatic, log } from "./vite.js";
 
-async function main() {
+async function startServer() {
   const app = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
@@ -58,4 +58,6 @@ async function main() {
   return app;
 }
 
-export default await main();
+// Immediately-invoked async function
+const app = await startServer();
+export default app;
