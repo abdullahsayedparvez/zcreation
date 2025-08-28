@@ -1,3 +1,4 @@
+// server/index.ts
 import express2 from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -10,12 +11,14 @@ app.use(express2.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   const start = Date.now();
   const path3 = req.path;
-  let capturedJsonResponse;
+  let capturedJsonResponse: any;
+
   const originalResJson = res.json;
   res.json = function (bodyJson, ...args) {
     capturedJsonResponse = bodyJson;
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
+
   res.on("finish", () => {
     const duration = Date.now() - start;
     if (path3.startsWith("/api")) {
@@ -36,7 +39,7 @@ app.use((req, res, next) => {
 registerRoutes(app);
 
 // Error middleware
-app.use((err, _req, res, _next) => {
+app.use((err: any, _req: any, res: any, _next: any) => {
   const status = err.status || err.statusCode || 500;
   const message = err.message || "Internal Server Error";
   res.status(status).json({ message });
@@ -48,6 +51,14 @@ if (app.get("env") === "development") {
   setupVite(app, undefined);
 } else {
   serveStatic(app);
+}
+
+// --- Run standalone (local dev), OR just export for serverless ---
+if (process.env.VERCEL !== "1") {
+  const port = process.env.PORT || 5000;
+  app.listen(port, () => {
+    log(`Server running at http://localhost:${port}`);
+  });
 }
 
 export default app;
