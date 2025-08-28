@@ -1,15 +1,20 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { z } from "zod";
+import { randomUUID } from "crypto";
 
-export async function registerRoutes(app: Express): Promise<Server> {
-  // Contact form endpoint
+export async function registerRoutes(app: Express): Promise<void> {
+  // Contact form endpoint (no storage, just echo back)
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactMessageSchema.parse(req.body);
-      const message = await storage.createContactMessage(validatedData);
+
+      const message = {
+        ...validatedData,
+        id: randomUUID(),
+        createdAt: new Date(),
+      };
+
       res.json(message);
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -19,18 +24,4 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     }
   });
-
-  // Get contact messages endpoint
-  app.get("/api/contact", async (req, res) => {
-    try {
-      const messages = await storage.getContactMessages();
-      res.json(messages);
-    } catch (error) {
-      res.status(500).json({ message: "Internal server error" });
-    }
-  });
-
-  const httpServer = createServer(app);
-
-  return httpServer;
 }
