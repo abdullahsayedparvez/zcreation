@@ -1,8 +1,8 @@
-// server/routes.ts (source)
+import type { Express } from "express";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
-// ✅ use .js so Node ESM can resolve it after build
+// ✅ use .js for Node ESM
 import { insertContactMessageSchema } from "../shared/schema.js";
 
 export async function registerRoutes(app: Express): Promise<void> {

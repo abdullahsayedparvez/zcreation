@@ -1,7 +1,8 @@
-// server/index.ts
 import express2 from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+
+// ✅ must include .js extensions for local files
+import { registerRoutes } from "./routes.js";
+import { setupVite, serveStatic, log } from "./vite.js";
 
 const app = express2();
 app.use(express2.json());
@@ -47,7 +48,6 @@ app.use((err: any, _req: any, res: any, _next: any) => {
 
 // In dev: Vite middleware; in prod: serve built client
 if (app.get("env") === "development") {
-  // don't pass null, just let Vite run without HMR server
   setupVite(app, undefined);
 } else {
   serveStatic(app);
